@@ -16,8 +16,8 @@ namespace Blog.v1.Service.Services
     public class ArticleService : BaseService<Article>, IArticleService
     {
         IUnitOfWork _unitOfWork;
-        IGenericRepository<Article> _articleRepository;
-        public ArticleService(IUnitOfWork unitOfWork, IGenericRepository<Article> articleRepository) : base(articleRepository, unitOfWork)
+        IArticleRepository _articleRepository;
+        public ArticleService(IUnitOfWork unitOfWork, IArticleRepository articleRepository) : base(articleRepository, unitOfWork)
         {
             _articleRepository = articleRepository;
             _unitOfWork = unitOfWork;

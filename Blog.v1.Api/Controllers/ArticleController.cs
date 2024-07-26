@@ -61,5 +61,13 @@ namespace Blog.v1.Api.Controllers
 
             return new ObjectResult(HttpStatusCode.NoContent);
         }
+
+        [HttpGet("/GetByCategoryId")]
+        public async Task<IActionResult> GetByCategoryId(int categoryId)
+        {
+            var response = await _service.GetByCategory(categoryId);
+
+            return new ObjectResult(_mapper.Map<List<ArticleDto>>(response));
+        }
     }
 }

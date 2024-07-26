@@ -35,6 +35,8 @@ builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 builder.Services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
 builder.Services.AddScoped(typeof(IArticleService), typeof(ArticleService));
 builder.Services.AddScoped(typeof(ICategoryService), typeof(CategoryService));
+builder.Services.AddScoped(typeof(ICategoryRepository), typeof(CategoryRepository));
+builder.Services.AddScoped(typeof(IArticleRepository), typeof(ArticleRepository));
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
 var app = builder.Build();
